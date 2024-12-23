@@ -1,11 +1,62 @@
-nav {
+/* Контейнер для всей навигации */
+#nav {
     background-color: rgb(30, 30, 30);
+    display: flex; /* Flexbox для выравнивания логотипа и меню */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: space-between; /* Пространство между логотипом и меню */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px; /* Высота навигационной панели */
+    box-sizing: border-box; /* Учитываем padding в ширине */
+    transition: top 0.5s;
 }
-  
-nav a {
-    float: left;
-    display: block;
-    color: #ffffff;
+
+/* Логотип */
+.logo-container {
+    display: flex;
+    align-items: center; /* Центрирование логотипа по вертикали */
+    padding: 0 10px; /* Внутренние отступы по краям */
+}
+
+.logo {
+    width: 50px; /* Размер логотипа */
+}
+
+/* Меню */
+.menu {
+    display: flex; /* Выравнивание пунктов меню в строку */
+    height: 100%; /* Меню занимает всю высоту навигационной панели */
+}
+
+/* Пункты меню */
+.nav-item {
+    color: white;
     text-align: center;
     text-decoration: none;
+    display: flex; /* Flex для центрирования текста */
+    align-items: center; /* Центрирование текста по вертикали */
+    justify-content: center; /* Горизонтальное центрирование */
+    height: 100%; /* Элемент занимает всю высоту навигационной панели */
+    padding: 0 15px; /* Внутренние отступы для увеличения кликабельной зоны */
+    transition: background-color 0.3s, color 0.3s;
 }
+
+.nav-item:hover {
+    background-color: white;
+    color: black;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+    transition: color 0.3s;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Убирает горизонтальный скроллинг */
+    width: 100%;
+}
+

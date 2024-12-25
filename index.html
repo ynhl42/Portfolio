@@ -20,8 +20,60 @@
                     <a href="#" class="nav-item"><h1>Contacts</h1></a>
                 </nav>
             </div>
-        </header>    
-        <p style="color: black; height: 2000px;">When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar</p>
+        </header>
+        <div class="lava-lamp-container">
+            <canvas class="lava-lamp-canvas"></canvas>
+        </div>
+        <!-- <p style="color: black; height: 2000px;">When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar</p> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/alea.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+        <script>
+            function Alea(seed) {
+                var s0 = 0.1, s1 = 0.1, s2 = 0.1, c = 1;
+            
+                if (seed) {
+                    var mash = Mash();
+                    s0 = mash(' ');
+                    s1 = mash(' ');
+                    s2 = mash(' ');
+            
+                    for (var i = 0; i < seed.length; i++) {
+                        s0 -= mash(seed[i]);
+                        if (s0 < 0) s0 += 1;
+                        s1 -= mash(seed[i]);
+                        if (s1 < 0) s1 += 1;
+                        s2 -= mash(seed[i]);
+                        if (s2 < 0) s2 += 1;
+                    }
+                }
+            
+                return function() {
+                    var t = 2091639 * s0 + c * 2.3283064365386963e-10; 
+                    s0 = s1;
+                    s1 = s2;
+                    s2 = t - (c = t | 0);
+                    return s2;
+                };
+            
+                function Mash() {
+                    var n = 0xefc8249d;
+                    return function(data) {
+                        for (var i = 0; i < data.length; i++) {
+                            n += data.charCodeAt(i);
+                            var h = 0.02519603282416938 * n;
+                            n = h >>> 0;
+                            h -= n;
+                            h *= n;
+                            n = h >>> 0;
+                            h -= n;
+                            n += h * 0x100000000; 
+                        }
+                        return (n >>> 0) * 2.3283064365386963e-10;
+                    };
+                }
+            }
+        </script>
+        <script src="lava.js"></script>
         <script src="script.js"></script>
     </body>
 

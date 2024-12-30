@@ -10,6 +10,7 @@
     height: 70px; /* Высота навигационной панели */
     box-sizing: border-box; /* Учитываем padding в ширине */
     transition: top 0.5s;
+    z-index: 1000;
 }
 
 /* Логотип */
@@ -47,7 +48,7 @@
     color: black;
 }
 
-h1 {
+.menu_title {
     font-size: 20px;
     margin: 0;
     transition: color 0.3s;
@@ -59,12 +60,14 @@ html, body {
     overflow-x: hidden; /* Убирает горизонтальный скроллинг */
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .lava-lamp-container {
-width: 100vw;
-height: 100vh;
-position: relative;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1000;
 }
 
 .lava-lamp-container::before {
@@ -74,11 +77,58 @@ position: relative;
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: -1000;
 }
 
 .lava-lamp-canvas {
-display: block;
-width: 100%;
-height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
 }
 
+a {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.context {
+    display: flex;
+    padding: 20px;
+    margin-top: 70px;
+    z-index: 0;
+    position: relative;
+    background-image: url(blob_mini.svg);
+    background-repeat: no-repeat;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    height: -webkit-fill-available;
+}
+
+.context_title {
+    display: flex;
+    font-size: 700%;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    color: white;
+    width: 50%;
+}
+
+.context_photo {
+    display: flex;
+    width: 80%;
+    position: relative;
+    justify-content: center;
+    background-image: url(blob_ch.svg);
+    background-repeat: no-repeat;
+    align-items: center;
+}
+
+.context_photo_img {
+    border-radius: 80px;
+    width: inherit;
+}

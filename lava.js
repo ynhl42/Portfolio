@@ -200,7 +200,7 @@
           numPoints: NUM_POINTS,
           radius: random(INITIAL_RADIUS_MIN, INITIAL_RADIUS_MAX),
           origin: origin,
-          centerX: random(dimensions.width * 0.2, dimensions.width * 0.8),
+          centerX: random(dimensions.width * 0.01, dimensions.width * 0.99),
           centerY: origin === 'top' ? random(-60, 0) : random(dimensions.height, dimensions.height + 60),
           color: blobBaseColor,
           speed: random(MOVE_SPEED_MIN, MOVE_SPEED_MAX),

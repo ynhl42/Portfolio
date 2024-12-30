@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <pattern height="70" id="ssshape-pattern1" patternTransform="scale(undefined) rotate(undefined)" patternUnits="userSpaceOnUse" viewBox="0 0 40 40" width="70">
+   <rect fill="rgb(30, 30, 30)" height="100%" id="svg_1" width="100%"/>
+   <circle cx="20" cy="20" fill="hsl(340, 45%, 25%)" fill-opacity="0.5" id="svg_2" r="10"/>
+   <circle cx="26" cy="20" fill="hsl(340, 45%, 25%)" id="svg_3" r="9"/>
+   <circle cx="-14" cy="20" fill="hsl(340, 45%, 25%)" id="svg_4" r="9"/>
+  </pattern>
+ </defs>
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m366.47,8.17c50.84,-11.91 180.9,40.74 214.7,92.66c33.81,51.94 -31.39,69 -60.9,124.97c-29.52,55.97 -174.75,31.77 -210.13,70.85c-35.38,39.08 36.24,232.79 -8.11,263.56c-44.35,30.77 -44.65,33.21 -114.98,15.12c-70.32,-18.11 -150.03,-59.32 -167.97,-117.7c-17.96,-58.38 20.21,-187.4 60.23,-232.61c40.02,-45.21 132.03,-2.51 179.88,-38.64c47.87,-36.14 56.46,-166.28 107.28,-178.21c50.84,-11.91 162.9,48.74 196.7,100.66" fill="#1e1e1e" id="svg_5" stroke="hsl(340, 45%, 30%)" stroke-width="0"/>
+ </g>
+</svg>

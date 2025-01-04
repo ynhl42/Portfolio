@@ -1,4 +1,4 @@
-async function loadRepositories(username) {
+async function loadRepos(username) {
     const url = `https://api.github.com/users/${username}/repos`;
     try {
         const response = await fetch(url);
@@ -11,23 +11,45 @@ async function loadRepositories(username) {
         repoList.innerHTML = ''; // Очищаем список перед добавлением новых элементов
 
         repos.forEach(repo => {
-            // Создаём элемент для каждого репозитория
-            const listItem = document.createElement('li');
 
-            // Ссылка на репозиторий
+            // Создаём элементы для каждого репозитория
+            const contextDiv = document.createElement('div');
+            contextDiv.className = 'context';
+
+            // Создаём контейнер для текста
+            const contextTextDiv = document.createElement('div');
+            contextTextDiv.className = 'context_text';
+
+            // Название репозитория
+            const titleDiv = document.createElement('div');
+            titleDiv.className = 'context_title';
             const repoLink = document.createElement('a');
+            repoLink.className = 'context_title';
             repoLink.href = repo.html_url;
             repoLink.textContent = repo.name;
             repoLink.target = '_blank'; // Открывать ссылки в новой вкладке
 
-            // Описание репозитория
-            const repoDescription = document.createElement('p');
-            repoDescription.textContent = repo.description || 'No description provided.';
+            titleDiv.appendChild(repoLink);
 
-            // Добавляем элементы в список
-            listItem.appendChild(repoLink);
-            listItem.appendChild(repoDescription);
-            repoList.appendChild(listItem);
+            // Описание репозитория
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.className = 'context_description';
+            descriptionDiv.innerHTML = repo.description 
+                ? repo.description.replace(/\n/g, '<br>') // Заменяем переносы строк на <br>
+                : 'No description provided.';
+
+            // Добавляем название и описание в context_text
+            contextTextDiv.appendChild(titleDiv);
+            contextTextDiv.appendChild(descriptionDiv);
+
+            // Создаём контейнер для изображения
+            const contextMediaDiv = document.createElement('div');
+            contextMediaDiv.className = 'context_media';
+
+            contextDiv.appendChild(contextTextDiv);
+            contextDiv.appendChild(contextMediaDiv);
+
+            repoList.appendChild(contextDiv);
         });
     } catch (error) {
         console.error('Failed to load repositories:', error);
@@ -37,5 +59,4 @@ async function loadRepositories(username) {
 
 // Замените 'myusername' на имя пользователя GitHub
 const username = 'ynhl42';
-document.getElementById('username').textContent = username;
-loadRepositories(username);
+loadRepos(username);

@@ -89,12 +89,6 @@ html, body {
     z-index: -1000;
 }
 
-a {
-    display: flex;
-    align-items: center;
-    padding: 0;
-}
-
 .context {
     display: flex;
     padding: 20px;
@@ -121,6 +115,7 @@ a {
     font-size: 300%;
     text-align: end;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .context_description {

@@ -126,9 +126,6 @@ a {
     width: 80%;
     position: relative;
     justify-content: end;
-    background-image: url(blob_ch.svg);
-    background-repeat: no-repeat;
-    align-items: center;
 }
 
 .context_photo_img {

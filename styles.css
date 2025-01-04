@@ -109,26 +109,33 @@ a {
     height: -webkit-fill-available;
 }
 
-.context_title {
-    display: flex;
-    font-size: 700%;
+.context_text {
     padding: 20px;
     text-align: end;
-    font-weight: bold;
-    position: relative;
     color: white;
     width: 50%;
     user-select: none
 }
 
-.context_photo {
+.context_title {
+    font-size: 300%;
+    text-align: end;
+    font-weight: bold;
+}
+
+.context_description {
+    font-size: 100%;
+    text-align: end;
+}
+
+.context_media {
     display: flex;
-    width: 80%;
+    width: 50%;
     position: relative;
     justify-content: end;
 }
 
 .context_photo_img {
     border-radius: 80px;
-    width: inherit;
+    width: -webkit-fill-available;
 }

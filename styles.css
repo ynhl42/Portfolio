@@ -98,15 +98,15 @@ a {
 .context {
     display: flex;
     padding: 20px;
-    margin-top: 70px;
     z-index: 0;
-    position: relative;
+    position: fixed;
     background-image: url(blob_min.svg);
     background-repeat: no-repeat;
     align-items: center;
     background-size: cover;
     background-position: center;
-    height: -webkit-fill-available;
+    height: inherit;
+    width: inherit;
 }
 
 .context_text {
@@ -137,5 +137,5 @@ a {
 
 .context_photo_img {
     border-radius: 80px;
-    width: -webkit-fill-available;
+    width: 100%;
 }
